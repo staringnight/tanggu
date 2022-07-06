@@ -1,4 +1,4 @@
-package com.dazhi100.school;
+package com.pokeya.tanggu;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
