@@ -1,0 +1,15 @@
+version: "3"
+services:
+  tanggu:
+    hostname: tanggu
+    image: harbor.dazhi100.com/dzyx/tanggu:latest
+    container_name: tanggu
+    restart: always
+    ports:
+      - "6060:6060"
+    networks:
+      - dzyx-server-network
+
+networks:
+  dzyx-server-network:
+    external: false
