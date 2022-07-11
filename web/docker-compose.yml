@@ -6,7 +6,7 @@ services:
     container_name: tanggu
     restart: always
     ports:
-      - "6060:6060"
+      - "18020:18020"
     networks:
       - dzyx-server-network
 

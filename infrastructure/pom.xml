@@ -14,7 +14,7 @@
     <packaging>jar</packaging>
 
     <properties>
-        <fusang.version>1.0.0-SNAPSHOT</fusang.version>
+        <pagehelper.version>5.3.0</pagehelper.version>
     </properties>
     <dependencies>
         <dependency>
@@ -67,6 +67,11 @@
         <dependency>
             <groupId>com.xuxueli</groupId>
             <artifactId>xxl-job-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>${pagehelper.version}</version>
         </dependency>
     </dependencies>
 

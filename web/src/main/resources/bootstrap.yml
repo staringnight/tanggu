@@ -19,7 +19,7 @@ spring:
   profiles:
     active: @package.environment@
 server:
-  port: 6081
+  port: 18020
 logging:
   config: classpath:log/logback-@package.environment@.xml
   file:
