@@ -12,7 +12,7 @@ ENV JAVA_OPTS "-server -Xmx2g -Xms512m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapD
 
 ENV JAR_FILE_DIR service/${JAR_FILE}
 
-EXPOSE 18020
+EXPOSE 18020 20882
 
 RUN bash -c 'touch /dzyx/service/${JAR_FILE}'
 
