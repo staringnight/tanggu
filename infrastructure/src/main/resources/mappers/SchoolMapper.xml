@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pokeya.tanggu.infrastructure.mapper.SchoolMapper">
+  <resultMap id="BaseResultMap" type="com.pokeya.tanggu.infrastructure.model.School">
+    <!--@mbg.generated-->
+    <!--@Table school-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="organization_code" jdbcType="VARCHAR" property="organizationCode" />
+    <result column="short_name" jdbcType="VARCHAR" property="shortName" />
+    <result column="school_permit" jdbcType="VARCHAR" property="schoolPermit" />
+    <result column="business_license" jdbcType="VARCHAR" property="businessLicense" />
+    <result column="school_nature" jdbcType="VARCHAR" property="schoolNature" />
+    <result column="rating" jdbcType="VARCHAR" property="rating" />
+    <result column="learning_period" jdbcType="VARCHAR" property="learningPeriod" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="province_id" jdbcType="INTEGER" property="provinceId" />
+    <result column="city_id" jdbcType="INTEGER" property="cityId" />
+    <result column="area_id" jdbcType="INTEGER" property="areaId" />
+    <result column="refuse_reason" jdbcType="VARCHAR" property="refuseReason" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `name`, organization_code, short_name, school_permit, business_license, school_nature, 
+    rating, learning_period, address, province_id, city_id, area_id, refuse_reason, `status`, 
+    create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from school
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from school
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.pokeya.tanggu.infrastructure.model.School">
+    <!--@mbg.generated-->
+    insert into school (id, `name`, organization_code, 
+      short_name, school_permit, business_license, 
+      school_nature, rating, learning_period, 
+      address, province_id, city_id, 
+      area_id, refuse_reason, `status`, 
+      create_time)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{organizationCode,jdbcType=VARCHAR}, 
+      #{shortName,jdbcType=VARCHAR}, #{schoolPermit,jdbcType=VARCHAR}, #{businessLicense,jdbcType=VARCHAR}, 
+      #{schoolNature,jdbcType=VARCHAR}, #{rating,jdbcType=VARCHAR}, #{learningPeriod,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{provinceId,jdbcType=INTEGER}, #{cityId,jdbcType=INTEGER}, 
+      #{areaId,jdbcType=INTEGER}, #{refuseReason,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pokeya.tanggu.infrastructure.model.School">
+    <!--@mbg.generated-->
+    insert into school
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="organizationCode != null">
+        organization_code,
+      </if>
+      <if test="shortName != null">
+        short_name,
+      </if>
+      <if test="schoolPermit != null">
+        school_permit,
+      </if>
+      <if test="businessLicense != null">
+        business_license,
+      </if>
+      <if test="schoolNature != null">
+        school_nature,
+      </if>
+      <if test="rating != null">
+        rating,
+      </if>
+      <if test="learningPeriod != null">
+        learning_period,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="provinceId != null">
+        province_id,
+      </if>
+      <if test="cityId != null">
+        city_id,
+      </if>
+      <if test="areaId != null">
+        area_id,
+      </if>
+      <if test="refuseReason != null">
+        refuse_reason,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationCode != null">
+        #{organizationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="shortName != null">
+        #{shortName,jdbcType=VARCHAR},
+      </if>
+      <if test="schoolPermit != null">
+        #{schoolPermit,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicense != null">
+        #{businessLicense,jdbcType=VARCHAR},
+      </if>
+      <if test="schoolNature != null">
+        #{schoolNature,jdbcType=VARCHAR},
+      </if>
+      <if test="rating != null">
+        #{rating,jdbcType=VARCHAR},
+      </if>
+      <if test="learningPeriod != null">
+        #{learningPeriod,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceId != null">
+        #{provinceId,jdbcType=INTEGER},
+      </if>
+      <if test="cityId != null">
+        #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="areaId != null">
+        #{areaId,jdbcType=INTEGER},
+      </if>
+      <if test="refuseReason != null">
+        #{refuseReason,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pokeya.tanggu.infrastructure.model.School">
+    <!--@mbg.generated-->
+    update school
+    <set>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationCode != null">
+        organization_code = #{organizationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="shortName != null">
+        short_name = #{shortName,jdbcType=VARCHAR},
+      </if>
+      <if test="schoolPermit != null">
+        school_permit = #{schoolPermit,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicense != null">
+        business_license = #{businessLicense,jdbcType=VARCHAR},
+      </if>
+      <if test="schoolNature != null">
+        school_nature = #{schoolNature,jdbcType=VARCHAR},
+      </if>
+      <if test="rating != null">
+        rating = #{rating,jdbcType=VARCHAR},
+      </if>
+      <if test="learningPeriod != null">
+        learning_period = #{learningPeriod,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceId != null">
+        province_id = #{provinceId,jdbcType=INTEGER},
+      </if>
+      <if test="cityId != null">
+        city_id = #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="areaId != null">
+        area_id = #{areaId,jdbcType=INTEGER},
+      </if>
+      <if test="refuseReason != null">
+        refuse_reason = #{refuseReason,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pokeya.tanggu.infrastructure.model.School">
+    <!--@mbg.generated-->
+    update school
+    set `name` = #{name,jdbcType=VARCHAR},
+      organization_code = #{organizationCode,jdbcType=VARCHAR},
+      short_name = #{shortName,jdbcType=VARCHAR},
+      school_permit = #{schoolPermit,jdbcType=VARCHAR},
+      business_license = #{businessLicense,jdbcType=VARCHAR},
+      school_nature = #{schoolNature,jdbcType=VARCHAR},
+      rating = #{rating,jdbcType=VARCHAR},
+      learning_period = #{learningPeriod,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      province_id = #{provinceId,jdbcType=INTEGER},
+      city_id = #{cityId,jdbcType=INTEGER},
+      area_id = #{areaId,jdbcType=INTEGER},
+      refuse_reason = #{refuseReason,jdbcType=VARCHAR},
+      `status` = #{status,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

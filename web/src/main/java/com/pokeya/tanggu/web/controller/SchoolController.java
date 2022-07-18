@@ -1,6 +1,7 @@
 package com.pokeya.tanggu.web.controller;
 
 import com.pokeya.tanggu.web.dto.request.EntityIdRequest;
+import com.pokeya.tanggu.web.dto.response.SchoolListResponse;
 import com.pokeya.tanggu.web.dto.response.SchoolResponse;
 import com.pokeya.yao.annotation.GetMappingWithClientCache;
 import io.swagger.v3.oas.annotations.Operation;
@@ -22,5 +23,18 @@ public class SchoolController {
         return null;
     }
 
+    @ResponseBody
+    @Operation(summary = "获取学校list")
+    @GetMappingWithClientCache("getSchoolList")
+    public SchoolListResponse getSchoolList() {
+        return null;
+    }
+
+    @ResponseBody
+    @Operation(summary = "初始化学校设置")
+    @GetMappingWithClientCache("initSchoolSetting")
+    public void initSchoolSetting() {
+
+    }
 
 }
