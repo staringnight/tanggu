@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * @author mac
  */
-@Schema(title = "城市信息")
-public record CityResponse(@Schema(title = "城市列表") List<CityItem> cityItemList) implements Serializable {
+@Schema(description ="城市信息")
+public record CityResponse(@Schema(description ="城市列表") List<CityItem> cityItemList) implements Serializable {
 
 }

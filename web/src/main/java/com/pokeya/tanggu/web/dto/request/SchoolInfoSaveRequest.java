@@ -8,8 +8,8 @@ import java.io.Serializable;
 /**
  * @author mac
  */
-@Schema(title = "学校超管保存信息")
-public record SchoolInfoSaveRequest(@NotEmpty @Schema(title = "学校") SchoolRequest schoolRequest,
-                                    @NotEmpty @Schema(title = "超管") SchoolAdminRequest schoolAdminRequest) implements Serializable {
+@Schema(description ="学校超管保存信息")
+public record SchoolInfoSaveRequest(@NotEmpty @Schema(description ="学校") SchoolRequest schoolRequest,
+                                    @NotEmpty @Schema(description ="超管") SchoolAdminRequest schoolAdminRequest) implements Serializable {
 
 }
