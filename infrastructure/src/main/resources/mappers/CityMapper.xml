@@ -1,158 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pokeya.tanggu.infrastructure.mapper.CityMapper">
-    <resultMap id="BaseResultMap" type="com.pokeya.tanggu.infrastructure.model.City">
-        <!--@mbg.generated-->
-        <!--@Table city-->
-        <id column="id" jdbcType="INTEGER" property="id"/>
-        <result column="name" jdbcType="VARCHAR" property="name"/>
-        <result column="sub_cid" jdbcType="INTEGER" property="subCid"/>
-        <result column="ctype" jdbcType="SMALLINT" property="ctype"/>
-        <result column="pin_j" jdbcType="VARCHAR" property="pinJ"/>
-        <result column="pin_a" jdbcType="VARCHAR" property="pinA"/>
-        <result column="cstate" jdbcType="SMALLINT" property="cstate"/>
-        <result column="pin_as" jdbcType="VARCHAR" property="pinAs"/>
-        <result column="shortname" jdbcType="VARCHAR" property="shortname"/>
-    </resultMap>
-    <sql id="Base_Column_List">
-        <!--@mbg.generated-->
-        id,
+  <resultMap id="BaseResultMap" type="com.pokeya.tanggu.infrastructure.model.City">
+    <!--@mbg.generated-->
+    <!--@Table city-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sub_cid" jdbcType="INTEGER" property="subCid" />
+    <result column="ctype" jdbcType="SMALLINT" property="ctype" />
+    <result column="pin_j" jdbcType="VARCHAR" property="pinJ" />
+    <result column="pin_a" jdbcType="VARCHAR" property="pinA" />
+    <result column="cstate" jdbcType="SMALLINT" property="cstate" />
+    <result column="pin_as" jdbcType="VARCHAR" property="pinAs" />
+    <result column="shortname" jdbcType="VARCHAR" property="shortname" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `name`, sub_cid, ctype, pin_j, pin_a, cstate, pin_as, shortname
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from city
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from city
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.pokeya.tanggu.infrastructure.model.City" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into city (`name`, sub_cid, ctype, 
+      pin_j, pin_a, cstate, 
+      pin_as, shortname)
+    values (#{name,jdbcType=VARCHAR}, #{subCid,jdbcType=INTEGER}, #{ctype,jdbcType=SMALLINT}, 
+      #{pinJ,jdbcType=VARCHAR}, #{pinA,jdbcType=VARCHAR}, #{cstate,jdbcType=SMALLINT}, 
+      #{pinAs,jdbcType=VARCHAR}, #{shortname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.pokeya.tanggu.infrastructure.model.City" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into city
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
         `name`,
+      </if>
+      <if test="subCid != null">
         sub_cid,
+      </if>
+      <if test="ctype != null">
         ctype,
+      </if>
+      <if test="pinJ != null">
         pin_j,
+      </if>
+      <if test="pinA != null">
         pin_a,
+      </if>
+      <if test="cstate != null">
         cstate,
+      </if>
+      <if test="pinAs != null">
         pin_as,
-        shortname
-    </sql>
-    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-        <!--@mbg.generated-->
-        select
-        <include refid="Base_Column_List"/>
-        from city
-        where id = #{id,jdbcType=INTEGER}
-    </select>
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-        <!--@mbg.generated-->
-        delete
-        from city
-        where id = #{id,jdbcType=INTEGER}
-    </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.pokeya.tanggu.infrastructure.model.City"
-            useGeneratedKeys="true">
-        <!--@mbg.generated-->
-        insert into city (`name`, sub_cid, ctype,
-                          pin_j, pin_a, cstate,
-                          pin_as, shortname)
-        values (#{name,jdbcType=VARCHAR}, #{subCid,jdbcType=INTEGER}, #{ctype,jdbcType=SMALLINT},
-                #{pinJ,jdbcType=VARCHAR}, #{pinA,jdbcType=VARCHAR}, #{cstate,jdbcType=SMALLINT},
-                #{pinAs,jdbcType=VARCHAR}, #{shortname,jdbcType=VARCHAR})
-    </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id"
-            parameterType="com.pokeya.tanggu.infrastructure.model.City" useGeneratedKeys="true">
-        <!--@mbg.generated-->
-        insert into city
-        <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="name != null">
-                `name`,
-            </if>
-            <if test="subCid != null">
-                sub_cid,
-            </if>
-            <if test="ctype != null">
-                ctype,
-            </if>
-            <if test="pinJ != null">
-                pin_j,
-            </if>
-            <if test="pinA != null">
-                pin_a,
-            </if>
-            <if test="cstate != null">
-                cstate,
-            </if>
-            <if test="pinAs != null">
-                pin_as,
-            </if>
-            <if test="shortname != null">
-                shortname,
-            </if>
-        </trim>
-        <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="name != null">
-                #{name,jdbcType=VARCHAR},
-            </if>
-            <if test="subCid != null">
-                #{subCid,jdbcType=INTEGER},
-            </if>
-            <if test="ctype != null">
-                #{ctype,jdbcType=SMALLINT},
-            </if>
-            <if test="pinJ != null">
-                #{pinJ,jdbcType=VARCHAR},
-            </if>
-            <if test="pinA != null">
-                #{pinA,jdbcType=VARCHAR},
-            </if>
-            <if test="cstate != null">
-                #{cstate,jdbcType=SMALLINT},
-            </if>
-            <if test="pinAs != null">
-                #{pinAs,jdbcType=VARCHAR},
-            </if>
-            <if test="shortname != null">
-                #{shortname,jdbcType=VARCHAR},
-            </if>
-        </trim>
-    </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.pokeya.tanggu.infrastructure.model.City">
-        <!--@mbg.generated-->
-        update city
-        <set>
-            <if test="name != null">
-                `name` = #{name,jdbcType=VARCHAR},
-            </if>
-            <if test="subCid != null">
-                sub_cid = #{subCid,jdbcType=INTEGER},
-            </if>
-            <if test="ctype != null">
-                ctype = #{ctype,jdbcType=SMALLINT},
-            </if>
-            <if test="pinJ != null">
-                pin_j = #{pinJ,jdbcType=VARCHAR},
-            </if>
-            <if test="pinA != null">
-                pin_a = #{pinA,jdbcType=VARCHAR},
-            </if>
-            <if test="cstate != null">
-                cstate = #{cstate,jdbcType=SMALLINT},
-            </if>
-            <if test="pinAs != null">
-                pin_as = #{pinAs,jdbcType=VARCHAR},
-            </if>
-            <if test="shortname != null">
-                shortname = #{shortname,jdbcType=VARCHAR},
-            </if>
-        </set>
-        where id = #{id,jdbcType=INTEGER}
-    </update>
-    <update id="updateByPrimaryKey" parameterType="com.pokeya.tanggu.infrastructure.model.City">
-        <!--@mbg.generated-->
-        update city
-        set `name`    = #{name,jdbcType=VARCHAR},
-            sub_cid   = #{subCid,jdbcType=INTEGER},
-            ctype     = #{ctype,jdbcType=SMALLINT},
-            pin_j     = #{pinJ,jdbcType=VARCHAR},
-            pin_a     = #{pinA,jdbcType=VARCHAR},
-            cstate    = #{cstate,jdbcType=SMALLINT},
-            pin_as    = #{pinAs,jdbcType=VARCHAR},
-            shortname = #{shortname,jdbcType=VARCHAR}
-        where id = #{id,jdbcType=INTEGER}
-    </update>
+      </if>
+      <if test="shortname != null">
+        shortname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="subCid != null">
+        #{subCid,jdbcType=INTEGER},
+      </if>
+      <if test="ctype != null">
+        #{ctype,jdbcType=SMALLINT},
+      </if>
+      <if test="pinJ != null">
+        #{pinJ,jdbcType=VARCHAR},
+      </if>
+      <if test="pinA != null">
+        #{pinA,jdbcType=VARCHAR},
+      </if>
+      <if test="cstate != null">
+        #{cstate,jdbcType=SMALLINT},
+      </if>
+      <if test="pinAs != null">
+        #{pinAs,jdbcType=VARCHAR},
+      </if>
+      <if test="shortname != null">
+        #{shortname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pokeya.tanggu.infrastructure.model.City">
+    <!--@mbg.generated-->
+    update city
+    <set>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="subCid != null">
+        sub_cid = #{subCid,jdbcType=INTEGER},
+      </if>
+      <if test="ctype != null">
+        ctype = #{ctype,jdbcType=SMALLINT},
+      </if>
+      <if test="pinJ != null">
+        pin_j = #{pinJ,jdbcType=VARCHAR},
+      </if>
+      <if test="pinA != null">
+        pin_a = #{pinA,jdbcType=VARCHAR},
+      </if>
+      <if test="cstate != null">
+        cstate = #{cstate,jdbcType=SMALLINT},
+      </if>
+      <if test="pinAs != null">
+        pin_as = #{pinAs,jdbcType=VARCHAR},
+      </if>
+      <if test="shortname != null">
+        shortname = #{shortname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pokeya.tanggu.infrastructure.model.City">
+    <!--@mbg.generated-->
+    update city
+    set `name` = #{name,jdbcType=VARCHAR},
+      sub_cid = #{subCid,jdbcType=INTEGER},
+      ctype = #{ctype,jdbcType=SMALLINT},
+      pin_j = #{pinJ,jdbcType=VARCHAR},
+      pin_a = #{pinA,jdbcType=VARCHAR},
+      cstate = #{cstate,jdbcType=SMALLINT},
+      pin_as = #{pinAs,jdbcType=VARCHAR},
+      shortname = #{shortname,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
 
     <select id="getAllCityList" resultMap="BaseResultMap">
-        select <include refid="Base_Column_List"/>
+        select <include refid="Base_Column_List" />
         from city where cstate = 10
     </select>
 </mapper>

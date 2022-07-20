@@ -7,6 +7,7 @@ import com.pokeya.yao.annotation.GetMappingWithClientCache;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,6 +16,7 @@ import java.util.List;
 /**
  * @author mac
  */
+@Slf4j
 @Tag(name = "city", description = "城市接口")
 @RestController("city")
 @RequiredArgsConstructor

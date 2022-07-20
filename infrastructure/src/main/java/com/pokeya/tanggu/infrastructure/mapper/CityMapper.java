@@ -1,8 +1,6 @@
 package com.pokeya.tanggu.infrastructure.mapper;
 
-import com.pokeya.tanggu.infrastructure.model.City;
-
-import java.util.List;
+import com.pokeya.tanggu.infrastructure.model.City;import java.util.List;
 
 public interface CityMapper {
     int deleteByPrimaryKey(Integer id);

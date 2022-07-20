@@ -1,11 +1,11 @@
-package com.pokeya.tanggu.infrastructure.model;
+package com.pokeya.tanggu.service.dto;
 
 import java.time.LocalDateTime;
 
 /**
  * 学校管理员
  */
-public class SchoolAdmin {
+public class SchoolAdminDto {
     /**
      * 主键
      */
